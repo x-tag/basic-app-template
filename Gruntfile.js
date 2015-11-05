@@ -17,8 +17,8 @@ module.exports = function(grunt) {
     'smush-components': {
       options: {
         fileMap: {
-          js: 'demo/x-tag-components.js',
-          css: 'demo/x-tag-components.css'
+          js: 'src/x-tag-components.js',
+          css: 'src/x-tag-components.css'
         }
       }
     },

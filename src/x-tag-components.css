@@ -1,0 +1,542 @@
+x-action {
+  display:inline-block;
+}
+
+x-appbar {
+  padding:0;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
+}
+
+x-appbar, x-appbar * {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+x-appbar > * {
+  margin: 0;
+  padding: 0 0.65em;
+  border: none;
+  background: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+x-appbar > h1,x-appbar h2,x-appbar h3,x-appbar h4,x-appbar h5,x-appbar h6 {
+  min-width: 0;
+  min-height: 0;
+  -webkit-box-flex:1;
+  -moz-box-flex:1;
+  -webkit-flex:1;
+  -ms-flex:1;
+  box-flex:1;
+  flex:1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  margin:0;
+  padding: 0 0.1em;
+}
+
+x-appbar > h1:after,x-appbar h2:after,x-appbar h3:after,x-appbar h4:after,x-appbar h5:after,x-appbar h6:after {
+  content:attr(subheading);
+  padding: 0 0.1em;
+}
+
+x-deck {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  z-index: 0;
+}
+
+x-deck > x-card {
+  display: none;
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translate(0%, 0%), scale(1);
+  -moz-transform: translate(0%, 0%), scale(1);
+  -ms-transform: translate(0%, 0%), scale(1);
+  -o-transform: translate(0%, 0%), scale(1);
+  transform: translate(0%, 0%), scale(1);
+  -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease;
+  -moz-transition: opacity 0.4s ease, -moz-transform 0.4s ease;
+  -ms-transition: opacity 0.4s ease, -ms-transform 0.4s ease;
+  -o-transition: opacity 0.4s ease, -o-transform 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+x-deck > x-card[selected], x-deck > x-card[show], x-deck > x-card[transition] {
+  display: block;
+}
+
+x-deck[transition-enter="fade-scale"] > x-card[show]:not([transition-enter]):not([transition-direction="reverse"]),
+x-deck[transition-exit="fade-scale"] > x-card[hide]:not([transition-exit]),
+x-deck[transition-exit="fade-scale"] > x-card[show][transition-direction="reverse"]:not([transition-exit]),
+x-deck[transition-enter="fade-scale"] > x-card[hide][transition-direction="reverse"]:not([transition-enter]),
+x-deck > x-card[transition-enter="fade-scale"][show],
+x-deck > x-card[transition-exit="fade-scale"][hide] {
+  opacity: 0;
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -o-transform: scale(0.85);
+  transform: scale(0.85);
+}
+
+x-deck[transition-enter="slide-right"] > x-card[show]:not([transition-enter]):not([transition-direction="reverse"]),
+x-deck[transition-exit="slide-left"] > x-card[hide]:not([transition-exit]),
+x-deck[transition-exit="slide-left"] > x-card[show][transition-direction="reverse"]:not([transition-exit]),
+x-deck[transition-enter="slide-right"] > x-card[hide][transition-direction="reverse"]:not([transition-enter]),
+x-deck > x-card[transition-enter="slide-right"][show],
+x-deck > x-card[transition-exit="slide-left"][hide],
+x-deck > x-card[transition-exit="slide-left"][show][transition-direction="reverse"],
+x-deck > x-card[transition-enter="slide-right"][hide][transition-direction="reverse"] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: translate(-100%, 0%);
+  -moz-transform: translate(-100%, 0%);
+  -ms-transform: translate(-100%, 0%);
+  -o-transform: translate(-100%, 0%);
+  transform: translate(-100%, 0%);
+}
+
+x-deck[transition-enter="slide-left"] > x-card[show]:not([transition-enter]):not([transition-direction="reverse"]),
+x-deck[transition-exit="slide-right"] > x-card[hide]:not([transition-exit]),
+x-deck[transition-exit="slide-right"] > x-card[show][transition-direction="reverse"]:not([transition-exit]),
+x-deck[transition-enter="slide-left"] > x-card[hide][transition-direction="reverse"]:not([transition-enter]),
+x-deck > x-card[transition-enter="slide-left"][show],
+x-deck > x-card[transition-exit="slide-right"][hide],
+x-deck > x-card[transition-exit="slide-right"][show][transition-direction="reverse"],
+x-deck > x-card[transition-enter="slide-left"][hide][transition-direction="reverse"] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: translate(100%, 0%);
+  -moz-transform: translate(100%, 0%);
+  -ms-transform: translate(100%, 0%);
+  -o-transform: translate(100%, 0%);
+  transform: translate(100%, 0%);
+}
+
+x-deck[transition-enter="slide-up"] > x-card[show]:not([transition-enter]):not([transition-direction="reverse"]),
+x-deck[transition-exit="slide-down"] > x-card[hide]:not([transition-exit]),
+x-deck[transition-exit="slide-down"] > x-card[show][transition-direction="reverse"]:not([transition-exit]),
+x-deck[transition-enter="slide-up"] > x-card[hide][transition-direction="reverse"]:not([transition-enter]),
+x-deck > x-card[transition-enter="slide-up"][show],
+x-deck > x-card[transition-exit="slide-down"][hide],
+x-deck > x-card[transition-exit="slide-down"][show][transition-direction="reverse"],
+x-deck > x-card[transition-enter="slide-up"][hide][transition-direction="reverse"] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: translate(0%, 100%);
+  -moz-transform: translate(0%, 100%);
+  -ms-transform: translate(0%, 100%);
+  -o-transform: translate(0%, 100%);
+  transform: translate(0%, 100%);
+}
+
+x-deck[transition-enter="slide-down"] > x-card[show]:not([transition-enter]):not([transition-direction="reverse"]),
+x-deck[transition-exit="slide-up"] > x-card[hide]:not([transition-exit]),
+x-deck[transition-exit="slide-up"] > x-card[show][transition-direction="reverse"]:not([transition-exit]),
+x-deck[transition-enter="slide-down"] > x-card[hide][transition-direction="reverse"]:not([transition-enter]),
+x-deck > x-card[transition-enter="slide-down"][show],
+x-deck > x-card[transition-exit="slide-up"][hide],
+x-deck > x-card[transition-exit="slide-up"][show][transition-direction="reverse"],
+x-deck > x-card[transition-enter="slide-down"][hide][transition-direction="reverse"] {
+  opacity: 1;
+  z-index: 1;
+  -webkit-transform: translate(0%, -100%);
+  -moz-transform: translate(0%, -100%);
+  -ms-transform: translate(0%, -100%);
+  -o-transform: translate(0%, -100%);
+  transform: translate(0%, -100%);
+}
+
+x-deck > x-card[transition-exit^="slide"][show][transition-direction="reverse"],
+x-deck[transition-enter^="slide"] > x-card[hide][transition-direction="reverse"]:not([transition-enter^="fade"]),
+x-deck > x-card[transition-enter^="slide"][show]:not([transition-direction="reverse"]),
+x-deck[transition-enter^="slide"] > x-card[show]:not([transition-direction="reverse"]):not([transition-enter^="fade"]) {
+  z-index: 2;
+}
+
+x-deck > x-card[transition="show"] {
+  opacity: 1 !important;
+  -webkit-transform: scale(1) translate(0%, 0%) !important;
+  -moz-transform: scale(1) translate(0%, 0%) !important;
+  -ms-transform: scale(1) translate(0%, 0%) !important;
+  -o-transform: scale(1) translate(0%, 0%) !important;
+  transform: scale(1) translate(0%, 0%) !important;
+}
+
+
+x-layout {
+  /* relative positioning is important because x-layout should really be
+  * placed in a parent container for it to fill;
+  * also, setting position:absolute causes older flexbox implementations,
+  * such as Firefox 18 (which is the version in FirefoxOS) to render
+  * flex items in a way such that it won't override a height:0 declaration,
+  * which is important for allowing the flex item to shrink past its
+  * content size */
+  position: relative;
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+x-layout > header, x-layout > footer {
+  margin: 0 !important;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+x-layout > header, x-layout > footer {
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  -moz-transition: -moz-transform 0.2s ease-in-out;
+  -ms-transition: -ms-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+x-layout > section {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -ms-flex: auto;
+  -webkit-transition: margin 0.2s ease-in-out
+  -moz-transition: margin 0.2s ease-in-out;
+  -ms-transition: margin 0.2s ease-in-out;
+  transition: margin 0.2s ease-in-out;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  overflow: auto;
+  position: relative;
+}
+
+x-layout:not([content-maximizing]):not([maxcontent]) > section{
+  margin: 0 !important;
+}
+
+x-layout > section > *:only-child{
+  /* fix for issue where 100% height children of flex items render as zero
+  * height in Webkit
+  * see: http://stackoverflow.com/a/15389545
+  */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+x-layout[hide-trigger] > header,
+x-layout[hide-trigger] > footer,
+x-layout[content-maximizing] > header, x-layout[content-maximized] > header, x-layout[maxcontent] > header,
+x-layout[content-maximizing] > footer, x-layout[content-maximized] > footer, x-layout[maxcontent] > footer {
+    position: absolute;
+    width: 100%;
+}
+
+x-layout[hide-trigger] > footer,
+x-layout[content-maximizing] > footer, x-layout[content-maximized] > footer, x-layout[maxcontent] > footer {
+    bottom: 0;
+}
+
+x-layout[content-maximizing] > header, x-layout[content-maximized] > header, x-layout[maxcontent] > header{
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+x-layout[content-maximizing] > footer, x-layout[content-maximized] > footer, x-layout[maxcontent] > footer  {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+x-modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  z-index: 1;
+  opacity: 1;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+x-modal-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+}
+
+x-modal-overlay:before {
+  content: "✖";
+  display: block;
+  position: absolute;
+  top: 0.25em;
+  right: 0.25em;
+  width: 1em;
+  padding: 0.05em;
+  color: #f00;
+  font-size: 200%;
+  line-height: 100%;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+x-modal[hidden], x-modal[hidden] + x-modal-overlay, x-modal:not([overlay]) + x-modal-overlay {
+  display: none;
+}
+
+x-modal[transition] {
+  -webkit-transform: translate(-50%, -50%) scale(0.9);
+  -moz-transform: translate(-50%, -50%) scale(0.9);
+  -o-transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+x-modal[transition], x-modal[transition] + x-modal-overlay {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease, -webkit-transform ease 0.35s;
+  -moz-transition: opacity 0.3s ease, -moz-transform ease 0.35s;
+  -o-transition: opacity 0.3s ease, -o-transform ease 0.35s;
+  transition: opacity 0.3s ease, transform ease 0.35s;
+}
+
+x-modal[transition="show"] {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  -moz-transform: translate(-50%, -50%) scale(1);
+  -o-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+x-modal[transition="show"]:not([hidden]) + x-modal-overlay {
+  opacity: 1;
+}
+
+x-modal[overlay]:not([hidden]):not([transition]) + x-modal-overlay {
+  opacity: 1;
+}
+
+x-peekbox {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  -webkit-transform: translate(-100%, 0);
+  -moz-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.25s ease;
+  -moz-transition: -moz-transform 0.25s ease;
+  -ms-transition: -ms-transform 0.25s ease;
+  transition: transform 0.25s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+x-peekbox[edge="top"] {
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+
+x-peekbox[edge="right"] {
+  left: auto;
+  right: 0;
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+
+x-peekbox[edge="bottom"] {
+  top: auto;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+
+x-peekbox[showing] {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+[x-peekbox-container]{
+  overflow: hidden;
+}
+
+[x-peekbox-container][x-peekbox-cover][x-peekbox-showing] > *:not(x-peekbox){
+  pointer-events: none;
+}
+
+
+x-spinner {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+x-spinner {
+  display: table;
+  text-align: center;
+  color: #000;
+  stroke: #000;
+}
+
+x-spinner[fade] {
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+	-moz-transition: opacity 0.6s;
+	-ms-transition: opacity 0.6s;
+	transition: opacity 0.6s;
+}
+
+x-spinner[transition="fade-in"] {
+  opacity: 1;
+  display: table;
+}
+
+x-spinner[transition="fade-out"] {
+  opacity: 0;
+  display: none;
+}
+
+x-spinner[transitioning] {
+  display: table;
+}
+
+x-spinner .x-spinner-center {
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+x-spinner .x-spinner-center[label]:after {
+  display: block;
+  content: attr(label);
+}
+
+x-spinner svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin: 0 auto;
+}
+
+x-spinner[spinning] svg, x-spinner[transitioning] svg {
+  -webkit-animation: x-spinner-rotate 1s infinite linear;
+  -ms-animation: x-spinner-rotate 1s infinite linear;
+  animation: x-spinner-rotate 1s infinite linear;
+}
+
+x-spinner[reverse] svg {
+  -webkit-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes x-spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes x-spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
