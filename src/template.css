@@ -58,22 +58,37 @@ button svg, x-action svg {
 
   #global_menu menu > * {
     display: block;
+    position: relative;
+    background: inherit;
     padding: 0.5em 0.5em 0.4em;
-    border-bottom: 1px solid #000;
-    background: #fff;
+    border-top: 1px solid rgba(255,255,255, 0.1);
+    border-bottom: 1px solid rgba(0,0,0, 0.2);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
     cursor: pointer;
   }
 
   #global_menu menu > *:first-child {
-    border-top: 1px solid #000;
+    border-top: 1px solid rgba(255,255,255, 0.1);
   }
 
   #global_menu menu > *:hover {
-    background: #eee;
+    background: rgba(0,0,0, 0.05);
   }
 
   #global_menu menu > [selected] {
-    background: #ddd;
+    background: none;
+    cursor: default;
+  }
+
+  #global_menu menu > [selected]:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.25em;
+    height: 100%;
+    background: currentColor;
   }
 
 #global_menu_toggle {
@@ -116,7 +131,7 @@ button svg, x-action svg {
 @media all and (min-width: 571px) and (max-width: 830px) {
 
   #global_menu {
-    width: 64px;
+    width: 72px;
     text-align: center;
     -webkit-transform: none;
     -moz-transform: none;
@@ -139,7 +154,7 @@ button svg, x-action svg {
   }
 
   #views {
-    margin-left: 64px;
+    margin-left: 72px;
   }
 
 }
