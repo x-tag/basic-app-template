@@ -75,12 +75,7 @@ button svg, x-action svg {
     background: rgba(0,0,0, 0.05);
   }
 
-  #global_menu menu > [selected] {
-    background: none;
-    cursor: default;
-  }
-
-  #global_menu menu > [selected]:after {
+  #global_menu menu > *:after {
     content: " ";
     display: block;
     position: absolute;
@@ -89,6 +84,20 @@ button svg, x-action svg {
     width: 0.25em;
     height: 100%;
     background: currentColor;
+    opacity: 0;
+  }
+
+  #global_menu menu > *:hover:after {
+    opacity: 0.3;
+  }
+
+  #global_menu menu > [selected] {
+    background: none;
+    cursor: default;
+  }
+
+  #global_menu menu > [selected]:after {
+    opacity: 1;
   }
 
 #global_menu_toggle {
