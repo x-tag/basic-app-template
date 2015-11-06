@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>X-Tag App Template</title>
-
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
   <link rel="stylesheet" type="text/css" href="src/x-tag-components.css"/>
   <link rel="stylesheet" type="text/css" href="src/template.css"/>
   <script type="text/javascript" src="src/x-tag-components.js"></script>
@@ -47,22 +47,28 @@
 
   <x-card style="background-color: lightblue;" selected>
     <x-layout>
-      <header>
+      <header class="shadow-mid">
         <x-appbar>
           <h2>Overview</h2>
+          <button><svg><use xlink:href="#circuits"></use></svg></button>
+          <button><svg><use xlink:href="#package"></use></svg></button>
         </x-appbar>
       </header>
       <section>
-
+        <div class="content-block shadow-low" style="width: auto; position: relative; margin: 2em; background: #fff;">
+          <header>Content Block</header>
+          <img style="display: block;" src="https://c.s-microsoft.com/en-us/CMSImages/Apps_Icons_Photos.png?version=595448d3-a0aa-42cb-70b3-0b4387f5958e" />
+        </div>
       </section>
     </x-layout>
   </x-card>
 
   <x-card style="background-color: lavender;">
     <x-layout>
-      <header>
+      <header class="shadow-mid">
         <x-appbar>
           <h2>Docs</h2>
+          <button>Save</button>
         </x-appbar>
       </header>
       <section>
@@ -73,7 +79,7 @@
 
   <x-card style="background-color: darkseagreen;">
     <x-layout>
-      <header>
+      <header class="shadow-mid">
         <x-appbar>
           <h2>Builds</h2>
         </x-appbar>
@@ -86,7 +92,7 @@
 
   <x-card style="background-color: tomato;">
     <x-layout>
-      <header>
+      <header class="shadow-mid">
         <x-appbar>
           <h2>Community</h2>
         </x-appbar>
@@ -99,8 +105,8 @@
 
 </x-deck>
 
-<x-peekbox id="global_menu" cover unselectable>
-  <svg id="menu_logo"><use xlink:href="#logo"></use></svg>
+<x-peekbox id="global_menu"  class="shadow-high" cover unselectable>
+  <div id="menu_logo"><svg><use xlink:href="#logo"></use></svg></div>
   <menu>
     <x-action selected target="#views" event="viewchange" method="showCard" args="0, 'forward'">
       <svg><use xlink:href="#circuits"></use></svg>

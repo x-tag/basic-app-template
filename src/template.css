@@ -23,6 +23,10 @@ button svg, x-action svg {
   padding: 0 0 0.15em;
 }
 
+x-appbar > button svg {
+  font-size: 2em;
+}
+
 [unselectable] {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -32,19 +36,46 @@ button svg, x-action svg {
   user-select: none;
 }
 
+/* GENERAL CLASSES */
+
+.shadow-low {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+.shadow-mid {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3);
+}
+
+.shadow-high {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.5);
+}
+
+.content-block {
+  display: inline-block;
+  padding: 0.25em 0.3em 0.3em;
+  border-radius: 0.2em;
+  background: #fff;
+}
+
+/* Layout Elements */
+
 #svg_source {
   display: none;
 }
 
-#menu_logo {
-  display: block;
-  margin: 0.25em auto;
-  font-size: 2em;
-}
-
-#views x-appbar, #global_menu_toggle {
+#views x-appbar, #global_menu_toggle, #menu_logo  {
   height: 2.5em;
   line-height: 2.5em;
+}
+
+#menu_logo {
+  text-align: center;
+}
+
+#menu_logo > * {
+  display: inline-block;
+  font-size: 1.5em;
+  margin: 0 auto;
 }
 
 #global_menu {
@@ -54,6 +85,8 @@ button svg, x-action svg {
   #global_menu menu {
     margin: 0;
     padding: 0;
+    border-top: 1px solid rgba(0,0,0, 0.2);
+    border-bottom: 1px solid rgba(0,0,0, 0.2);
   }
 
   #global_menu menu > * {
@@ -61,14 +94,13 @@ button svg, x-action svg {
     position: relative;
     background: inherit;
     padding: 0.5em 0.5em 0.4em;
-    border-top: 1px solid rgba(255,255,255, 0.1);
     border-bottom: 1px solid rgba(0,0,0, 0.2);
     text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
     cursor: pointer;
   }
 
-  #global_menu menu > *:first-child {
-    border-top: 1px solid rgba(255,255,255, 0.1);
+  #global_menu menu > *:last-child {
+    border-bottom: none;
   }
 
   #global_menu menu > *:hover {
@@ -105,25 +137,43 @@ button svg, x-action svg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 2em;
+  width: 2.5em;
   text-align: center;
   cursor: pointer;
   pointer-events: auto;
 }
 
   #global_menu_toggle svg {
+    position: relative;
+    top: 50%;
     display: block;
     height: 1em;
     width: 1em;
-    margin: 0.3em auto;
+    margin: 0 auto;
     padding: 0.4em;
     background: #ddd;
     border-radius: 10em;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
 
   #global_menu:not([showing]) + #global_menu_toggle svg:last-child, #global_menu[showing] + #global_menu_toggle svg:first-child {
     display: none;
   }
+
+/* VIEW LAYOUT */
+
+#views > x-card > x-layout > header {
+  background: #fff;
+}
+
+#views > x-card > x-layout > header > x-appbar > *:first-child {
+  padding-left: 0.25em;
+}
+
+/* MEDIA QUERIES */
 
 @media all and (max-width: 570px) {
 
@@ -132,7 +182,11 @@ button svg, x-action svg {
   }
 
   #views x-appbar {
-    padding-left: 2em;
+    padding-left: 2.5em;
+  }
+
+  #views > x-card > x-layout > header > x-appbar > *:first-child {
+    padding-left: 0;
   }
 
 }
