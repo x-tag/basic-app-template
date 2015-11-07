@@ -55,6 +55,10 @@ x-appbar > button svg {
   padding: 0.25em 0.3em 0.3em;
   border-radius: 0.2em;
   background: #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Layout Elements */
@@ -124,7 +128,7 @@ x-appbar > button svg {
   }
 
   #global_menu menu > [selected] {
-    background: none;
+    background: rgba(0,0,0,0.1);
     cursor: default;
   }
 
