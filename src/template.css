@@ -7,8 +7,24 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  font-size: calc(1em + 0.5vmin);
+  font-size: calc(0.85em + 0.4vmin);
   cursor: default;
+}
+
+h1 {
+  font-size: 140%;
+}
+
+h2 {
+  font-size: 125%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+h4 {
+  font-size: 100%;
 }
 
 svg {
@@ -68,8 +84,8 @@ x-appbar > button svg {
 }
 
 #views x-appbar, #global_menu_toggle, #menu_logo  {
-  height: 2.5em;
-  line-height: 2.5em;
+  height: 3.25em;
+  line-height: 3.25em;
 }
 
 #menu_logo {
@@ -184,10 +200,6 @@ x-card > x-layout > header {
     padding-left: 2.5em;
   }
 
-  #views > x-card > x-layout > header > x-appbar > *:first-child {
-    padding-left: 0;
-  }
-
 }
 
 @media all and (min-width: 571px) and (max-width: 830px) {
@@ -212,7 +224,7 @@ x-card > x-layout > header {
 
   #global_menu x-action span {
     display: block;
-    font-size: 0.5em;
+    font-size: 0.6em;
   }
 
   #views {
