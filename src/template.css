@@ -168,12 +168,8 @@ x-appbar > button svg {
 
 /* VIEW LAYOUT */
 
-#views > x-card > x-layout > header {
+x-card > x-layout > header {
   background: #fff;
-}
-
-#views > x-card > x-layout > header > x-appbar > *:first-child {
-  padding-left: 0.25em;
 }
 
 /* MEDIA QUERIES */

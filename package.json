@@ -1,6 +1,6 @@
 {
   "name": "x-tag-app-template",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "dependencies": {},
   "devDependencies": {
     "bower": "~1.2.4",
