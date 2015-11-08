@@ -113,7 +113,7 @@ x-appbar > button svg {
     display: block;
     position: relative;
     background: inherit;
-    padding: 0.5em 0.5em 0.4em;
+    padding: 0.7em 0.5em 0.6em;
     border-bottom: 1px solid rgba(0,0,0, 0.2);
     cursor: pointer;
   }
@@ -188,6 +188,10 @@ x-card > x-layout > header {
   background: #fff;
 }
 
+x-card > x-layout > header > x-appbar h2 {
+  padding-left: 0.5em;
+}
+
 /* MEDIA QUERIES */
 
 @media all and (max-width: 570px) {
@@ -198,6 +202,10 @@ x-card > x-layout > header {
 
   #views x-appbar {
     padding-left: 2.5em;
+  }
+
+  x-card > x-layout > header > x-appbar h2 {
+    padding-left: 0.5em;
   }
 
 }
