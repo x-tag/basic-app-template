@@ -96,6 +96,7 @@ x-appbar > button svg {
   display: inline-block;
   font-size: 1.5em;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 #global_menu {
@@ -163,19 +164,8 @@ x-appbar > button svg {
 }
 
   #global_menu_toggle svg {
-    position: relative;
-    top: 50%;
-    display: block;
-    height: 1em;
-    width: 1em;
-    margin: 0 auto;
-    padding: 0.4em;
-    background: #ddd;
-    border-radius: 10em;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    display: inline-block;
+    font-size: 1.6em;
   }
 
   #global_menu:not([showing]) + #global_menu_toggle svg:last-child, #global_menu[showing] + #global_menu_toggle svg:first-child {
@@ -200,12 +190,16 @@ x-card > x-layout > header > x-appbar h2 {
     display: block;
   }
 
+  #global_menu menu > * {
+    padding: 1em 0.6em 0.9em;
+  }
+
   #views x-appbar {
     padding-left: 2.5em;
   }
 
   x-card > x-layout > header > x-appbar h2 {
-    padding-left: 0.5em;
+    padding-left: 0.25em;
   }
 
 }
