@@ -204,7 +204,7 @@ x-card > x-layout > header > x-appbar h2 {
 
 }
 
-@media all and (min-width: 571px) and (max-width: 830px) {
+@media all and (min-width: 571px) and (max-width: 850px) {
 
   #global_menu {
     width: 72px;
@@ -235,7 +235,7 @@ x-card > x-layout > header > x-appbar h2 {
 
 }
 
-@media all and (min-width: 831px) {
+@media all and (min-width: 851px) {
 
   #global_menu {
     -webkit-transform: none;
