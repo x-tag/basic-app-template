@@ -100,7 +100,7 @@ x-appbar > button svg {
 }
 
 #global_menu {
-  width: 200px;
+  width: 175px;
 }
 
   #global_menu menu {
@@ -249,7 +249,7 @@ x-card > x-layout > header > x-appbar h2 {
   }
 
   #views {
-    margin-left: 200px;
+    margin-left: 175px;
   }
 
 }
