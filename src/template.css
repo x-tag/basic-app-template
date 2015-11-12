@@ -35,8 +35,21 @@ svg {
   vertical-align: middle;
 }
 
+x-appbar > button {
+  font-weight: bold;
+}
+
+x-appbar > button a {
+  color: inherit;
+  text-decoration: none;
+}
+
 x-appbar > button svg {
   font-size: 2em;
+}
+
+x-appbar > button span {
+  font-size: 1.15em;
 }
 
 [unselectable] {
