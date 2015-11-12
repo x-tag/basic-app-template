@@ -50,8 +50,15 @@
       <header class="shadow-mid">
         <x-appbar>
           <h2>Overview</h2>
-          <button><svg><use xlink:href="#circuits"></use></svg></button>
-          <button><x-action event="viewchange" data-view="builds"><svg><use xlink:href="#package"></use></svg></x-action></button>
+          <a href="http://github.com/x-tag/core" target="_blank">
+            <svg><use xlink:href="#circuits"></use></svg><span>Link</span>
+          </a>
+          <button>
+            <svg><use xlink:href="#circuits"></use></svg><span>Button</span>
+          </button>
+          <x-action event="viewchange" data-view="builds">
+            <svg><use xlink:href="#package"></use></svg><span>X-ACTION</span>
+          </x-action>
         </x-appbar>
       </header>
       <section>
