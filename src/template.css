@@ -103,7 +103,7 @@ x-appbar > button svg {
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(0,0,0, 0.2);
-    border-bottom: 1px solid rgba(0,0,0, 0.2);
+    border-bottom: 1px solid rgba(255,255,255, 0.1);
   }
 
   #global_menu menu > * {
@@ -113,10 +113,6 @@ x-appbar > button svg {
     padding: 0.7em 0.5em 0.6em;
     border-bottom: 1px solid rgba(0,0,0, 0.2);
     cursor: pointer;
-  }
-
-  #global_menu menu > *:last-child {
-    border-bottom: none;
   }
 
   #global_menu menu > *:hover {
@@ -153,7 +149,7 @@ x-appbar > button svg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 2.5em;
+  width: 2.75em;
   text-align: center;
   cursor: pointer;
   pointer-events: auto;
@@ -191,7 +187,7 @@ x-card > x-layout > header > x-appbar h2 {
   }
 
   #views x-appbar {
-    padding-left: 2.5em;
+    padding-left: 2.75em;
   }
 
   x-card > x-layout > header > x-appbar h2 {
