@@ -51,6 +51,7 @@ x-appbar > x-action svg {
 x-appbar > a span,
 x-appbar > button span,
 x-appbar > x-action span {
+  font-size: 0.85em;
   margin-left: 0.25em;
 }
 
